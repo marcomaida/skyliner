@@ -91,7 +91,6 @@ public class GameManager : MonoBehaviour
             heart.SetActive(false);
             StopAllCoroutines();
             gameHintText.enabled = false;
-            RandomAd(score);//eheh
         }
         else if (stateToSwitchTo == GameState.RUNNING)
         {
@@ -275,26 +274,4 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(true);
 
     }
-    public void RandomAd(int lastRunScore)
-    {//Decides wether to show or not to show an Ad
-        if (playedGames > 5 && lastRunScore < bestScore)
-        {
-            double AdPercentage = 0.05;
-
-            if (UnityEngine.Random.Range(0f, 1f) < AdPercentage)
-                ShowAd();//Infamata
-        }
-
-    }
-    public void ShowAd()
-    {
-        if (Advertisement.IsReady())
-        {
-            Advertisement.Show();
-        }
-    }
-    //void OnGUI()
-    //{
-    //    GUILayout.Label(""+playedGames);
-    //}
 }

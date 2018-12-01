@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     //Rotation management
     float maxRotationAngle = 90;
     float maxVelocityRotation = 20;
-    float rotationSpeed = 90;//rotation lerp speed
+    float rotationSpeed = 50;//rotation lerp speed
 
     public Bouncer headBouncer;
     public Bouncer bodyBouncer;
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour {
         rigidBody2D.AddForce(new Vector2(0, jumpForce));
 		AudioManager.activeManager.PlayClipFromLibrary (3, transform.position, false);
 
-        particles.Emit (5);
+        particles.Emit (3);
     }
     public void FirstJump()
     {
